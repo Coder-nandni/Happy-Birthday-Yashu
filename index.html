@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone, Somewhere ✨</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Poppins,sans-serif;
+  background:#050817;color:#fff;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.7;
+  background-image:
+   radial-gradient(circle at 20% 20%,rgba(255,255,255,.9) 0 1px,transparent 1.5px),
+   radial-gradient(circle at 80% 30%,rgba(255,220,240,.8) 0 1px,transparent 1.5px),
+   radial-gradient(circle at 50% 70%,rgba(255,255,255,.65) 0 1px,transparent 1.5px);
+  background-size:170px 170px,230px 230px,310px 310px;
+  animation:stars 18s linear infinite;
+}
+@keyframes stars{to{transform:translateY(-80px)}}
+section{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:70px 22px;position:relative;
+}
+.card{text-align:center;max-width:850px;position:relative;z-index:2}
+.eyebrow{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#d9b8c9;margin-bottom:22px}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500}
+h1{font-size:clamp(55px,10vw,105px);line-height:.9}
+h2{font-size:clamp(45px,7vw,75px);margin-bottom:22px}
+p{font-size:16px;line-height:2;color:#d7d8e2;font-weight:300}
+.hero p{max-width:620px;margin:30px auto}
+button{
+  border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.07);
+  color:#fff;border-radius:50px;padding:14px 28px;font:400 13px Poppins;
+  letter-spacing:1px;cursor:pointer;backdrop-filter:blur(8px);transition:.3s;
+}
+button:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.glow{
+ position:absolute;width:380px;height:380px;border-radius:50%;
+ background:radial-gradient(circle,rgba(184,112,158,.20),transparent 68%);
+ filter:blur(10px);top:50%;left:50%;transform:translate(-50%,-50%);
+}
+.moon{
+ width:120px;height:120px;border-radius:50%;margin:0 auto 35px;
+ background:#fff5ed;box-shadow:0 0 50px rgba(255,238,220,.28);
+ position:relative;
+}
+.moon:after{content:"";position:absolute;background:#050817;width:105px;height:105px;border-radius:50%;left:30px;top:-10px}
+.reveal{opacity:0;transform:translateY(30px);transition:1.2s ease}
+.reveal.show{opacity:1;transform:none}
+.quote{font-family:"Cormorant Garamond",serif;font-size:31px;line-height:1.5;color:#f5eaf0}
+.heart{font-size:55px;animation:pulse 1.8s infinite;margin-bottom:25px}
+@keyframes pulse{50%{transform:scale(1.12);text-shadow:0 0 30px #d87da8}}
+.cake{font-size:85px;margin:20px 0;filter:drop-shadow(0 0 18px rgba(255,180,210,.2))}
+.final{
+ background:radial-gradient(circle at center,rgba(111,50,91,.2),transparent 45%);
+}
+.final .small{font-size:14px;color:#aaaabd;margin-top:28px}
+.music{
+ position:fixed;right:18px;top:18px;z-index:10;
+ width:46px;height:46px;padding:0;border-radius:50%;
+ display:flex;align-items:center;justify-content:center;
+ font-size:18px;
+}
+.scroll{margin-top:55px;font-size:11px;letter-spacing:3px;color:#888}
+@media(max-width:600px){p{font-size:14px}.quote{font-size:25px}.moon{width:90px;height:90px}.moon:after{width:80px;height:80px;left:23px}}
+</style>
+</head>
+<body>
+
+<button class="music" id="musicBtn" title="Music">♫</button>
+<audio id="music" loop preload="auto">
+  <!-- Put your music file in the same folder and rename it to music.mp3 -->
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+  <div class="glow"></div>
+  <div class="card">
+    <div class="moon"></div>
+    <div class="eyebrow">A little birthday letter</div>
+    <h1>For someone,<br>somewhere.</h1>
+    <p>
+      This isn't just a birthday wish.<br>
+      It's a tiny message for someone I haven't met yet...
+      but somehow, I still hope our paths cross someday.
+    </p>
+    <button onclick="nextSection('story')">Open your birthday surprise ✨</button>
+    <div class="scroll">SCROLL SLOWLY ↓</div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="card reveal">
+    <div class="eyebrow">Maybe it's strange</div>
+    <h2>How can someone<br>feel special...</h2>
+    <p>
+      ...when you've never even met them?
+    </p>
+    <br>
+    <p class="quote">
+      “Maybe some people enter our story<br>
+      long before they enter our life.”
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card reveal">
+    <div class="eyebrow">Somewhere between now & someday</div>
+    <h2>I don't know<br>where you are.</h2>
+    <p>
+      I don't know what you're doing right now.<br>
+      I don't know what your smile looks like in person.<br>
+      I don't even know when our paths will cross.
+    </p>
+    <br>
+    <p>
+      Maybe tomorrow.<br>
+      Maybe years from now.<br>
+      Or maybe destiny has already started writing it.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card reveal">
+    <div class="heart">♡</div>
+    <div class="eyebrow">But today is different</div>
+    <h2>Today is your day.</h2>
+    <div class="cake">🎂</div>
+    <p>
+      So wherever you are,<br>
+      whatever you're doing,<br>
+      I hope today gives you a reason to smile.
+    </p>
+  </div>
+</section>
+
+<section class="final">
+  <div class="glow"></div>
+  <div class="card reveal">
+    <div class="eyebrow">From someone who is still waiting for destiny</div>
+    <h2>Happy Birthday,<br>Yashu. 🤍</h2>
+    <p class="quote">
+      Maybe we're strangers today,<br>
+      but who knows what tomorrow has planned for us?
+    </p>
+    <br>
+    <p>
+      Until destiny decides to introduce us,<br>
+      I hope life gives you every reason to be happy,<br>
+      every dream a chance to come true,<br>
+      and every ordinary day a little bit of magic.
+    </p>
+    <p class="small">
+      And maybe someday...<br>
+      I'll tell you all of this in person.😊🤗
+    </p>
+  </div>
+</section>
+
+<script>
+const music=document.getElementById('music');
+const btn=document.getElementById('musicBtn');
+
+btn.addEventListener('click',()=>{
+  if(music.paused){music.play();btn.textContent='❚❚'}
+  else{music.pause();btn.textContent='♫'}
+});
+
+function nextSection(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  music.play().then(()=>btn.textContent='❚❚').catch(()=>{});
+}
+
+
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.2});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
